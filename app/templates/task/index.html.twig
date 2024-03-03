@@ -18,7 +18,7 @@
         {% for task in tasks %}
             <tr>
                 <td>{{ task.id }}</td>
-                <td>{{ task.title }}</td>
+                <td>{{ task.label }}</td>
                 <td>{{ task.done ? 'Yes' : 'No' }}</td>
                 <td>
                     <a href="{{ path('app_task_show', {'id': task.id}) }}">show</a>

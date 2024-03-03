@@ -24,7 +24,7 @@ class Task
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getLabel(): ?string
     {
         return $this->label;
     }

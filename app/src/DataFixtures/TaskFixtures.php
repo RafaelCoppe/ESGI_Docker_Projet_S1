@@ -22,13 +22,11 @@ class TaskFixtures extends Fixture
     ];
     public function load(ObjectManager $manager)
     {
-        foreach (self::tasks as $task) {
-            for ($i = 0; $i < 10; $i++) {
-                $task = new Task();
-                $task->setLabel($task['label']);
-                $task->setDone($task['done']);
-                $manager->persist($task);
-            }
+        foreach (self::tasks as $unetask) {
+            $task = new Task();
+            $task->setLabel($unetask['label']);
+            $task->setDone($unetask['done']);
+            $manager->persist($task);
         }
 
         $manager->flush();
