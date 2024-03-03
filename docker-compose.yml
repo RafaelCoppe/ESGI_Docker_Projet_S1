@@ -1,0 +1,32 @@
+version: '3.8' 
+
+services:
+  symfony:
+    image: rafaelcoppejr965/custom_symfony
+    ports:
+      - '8000:8000'
+    volumes:
+      - './app:/app'
+
+  postgres:
+    image: rafaelcoppejr965/custom_postgres
+    ports:
+      - '5432:5432'
+    volumes:
+       - 'pg_data:/var/lib/postgresql/data'
+    environment:
+      POSTGRES_USER: 'app'
+      POSTGRES_PASSWORD: '!ChangeMe!'
+
+  composer:
+    image: rafaelcoppejr965/custom_composer
+    volumes:
+      - './app:/app'
+
+  adminer:
+    image: rafaelcoppejr965/custom_adminer
+    ports:
+      - '8080:8080'
+
+volumes:
+  pg_data:
