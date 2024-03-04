@@ -1,4 +1,7 @@
 Lancement de l'application : 
+* Installation des dépendances : <pre>
+cd app
+composer install</pre>
 * Lancer les conteneurs : <pre>docker compose up -d</pre>
 * Créer la base de données sur le conteneur postgres : <pre>
 docker exec -it esgi_docker_projet_s1-postgres-1 psql
