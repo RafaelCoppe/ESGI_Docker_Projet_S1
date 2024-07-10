@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TaskController extends AbstractController
 {
-    #[Route('/task', name: 'app_task_index', methods: ['GET'])]
+    #[Route('/', name: 'app_task_index', methods: ['GET'])]
     public function default(TaskRepository $taskRepository): Response
     {
         return $this->render('task/index.html.twig', [
